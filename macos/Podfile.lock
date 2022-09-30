@@ -2,27 +2,40 @@ PODS:
   - device_info_plus_macos (0.0.1):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
+  - motor_flutter (0.7.1):
+    - FlutterMacOS
+    - motor_mac_pod (~> 1.0.0)
+  - motor_mac_pod (1.0.0)
   - path_provider_macos (0.0.1):
     - FlutterMacOS
 
 DEPENDENCIES:
   - device_info_plus_macos (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus_macos/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
+  - motor_flutter (from `Flutter/ephemeral/.symlinks/plugins/motor_flutter/macos`)
   - path_provider_macos (from `Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos`)
+
+SPEC REPOS:
+  trunk:
+    - motor_mac_pod
 
 EXTERNAL SOURCES:
   device_info_plus_macos:
     :path: Flutter/ephemeral/.symlinks/plugins/device_info_plus_macos/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
+  motor_flutter:
+    :path: Flutter/ephemeral/.symlinks/plugins/motor_flutter/macos
   path_provider_macos:
     :path: Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos
 
 SPEC CHECKSUMS:
   device_info_plus_macos: 1ad388a1ef433505c4038e7dd9605aadd1e2e9c7
   FlutterMacOS: ae6af50a8ea7d6103d888583d46bd8328a7e9811
+  motor_flutter: 855047797b17bc65afd5db89b4aabcf2561ff06c
+  motor_mac_pod: f9a8df8d662c6ddbd0256f705028c66bab2da1a0
   path_provider_macos: 3c0c3b4b0d4a76d2bf989a913c2de869c5641a19
 
-PODFILE CHECKSUM: 6eac6b3292e5142cfc23bdeb71848a40ec51c14c
+PODFILE CHECKSUM: 403082784377c8ce6633b66175bb31bffb1486d5
 
 COCOAPODS: 1.11.3

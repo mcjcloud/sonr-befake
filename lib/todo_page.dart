@@ -22,7 +22,7 @@ class _TodoPageState extends State<TodoPage> {
     final String task = todoItemController.text;
     final doc = Get.find<SchemaDefinition>(tag: 'taskSchema').newDocument();
     doc.set<String>('task', task);
-    SchemaDocument? resp = await doc.save(task);
+    SchemaDocument? resp = await doc.upload(task);
     if (resp != null) {
       Get.snackbar('Success', 'Item added');
       print(resp.did);

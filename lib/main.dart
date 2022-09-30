@@ -11,7 +11,7 @@ Future<void> main() async {
   await GetStorage.init();
 
   Get.put(MotorFlutter(), permanent: true); // Initialize MotorFlutter
-  await MotorFlutter.init(enableStorage: false); // Initialize MotorFlutter
+  await MotorFlutter.init(); // Initialize MotorFlutter
 
   runApp(const MyApp());
 }
@@ -53,31 +53,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  void _incrementCounter() async {
-    await _createSchema();
-    Get.to(const TodoPage(title: 'Add item'));
-  }
-
-  Future<void> _createSchema() async {
-    if (!Get.isRegistered<SchemaDefinition>(tag: "taskSchema")) {
-      CreateSchemaResponse resp = await MotorFlutter.to.createSchema(
-          "task", {'task': SchemaKind.STRING},
-          metadata: {'use': 'github.com/ntindle/todo_app'});
-
-      print("Schema created: $resp");
-      SchemaDefinition schema = SchemaDefinition(
-          did: resp.whatIs.did,
-          creator: resp.whatIs.creator,
-          label: resp.whatIs.schema.label,
-          fields: resp.whatIs.schema.fields);
-      print("SchemaDefinition: $schema");
-      Get.put(schema, tag: "taskSchema");
-    } else {
-      print(
-          "Schema already exists ${Get.find<SchemaDefinition>(tag: "taskSchema").did}");
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
